@@ -8,3 +8,13 @@ C:\Users\Tzahi\Desktop\Project\testNum1\testNum1\obj\Debug\testNum1.dll
 C:\Users\Tzahi\Desktop\Project\testNum1\testNum1\obj\Debug\testNum1.pdb
 C:\Users\Tzahi\Desktop\Project\testNum1\testNum1\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Tzahi\Desktop\Project\testNum1\testNum1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\bin\Debug\testNum1.dll
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\bin\Debug\testNum1.pdb
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\bin\Debug\WebDriver.dll
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\bin\Debug\WebDriver.xml
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\obj\Debug\testNum1.csprojResolveAssemblyReference.cache
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\obj\Debug\testNum1.dll
+C:\Users\Tzahi\Source\Repos\ULAS\testNum1\obj\Debug\testNum1.pdb

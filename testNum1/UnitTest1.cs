@@ -27,15 +27,16 @@ namespace testNum1
             ff.clickOnElement("id='sgnBt'");
             ff.waitFunc(10);
             ff.goToURL("http://bulksell.ebay.com/ws/eBayISAPI.dll?SingleList&&DraftURL=http://www.ebay.com/sh/lst/drafts&sellingMode=AddItem&templateId=5202621013&returnUrl=http://bulksell.ebay.com/ws/eBayISAPI.dll?SingleList");
-            
-            var json = new WebClient().DownloadString("https://api.magicthegathering.io/v1/cards?name=Abrade");
-            ff.waitFunc(10);
-            JObject obj = JObject.Parse(json);
-            string name = obj["cards"][0]["name"].Value<string>();
 
-            ff.insertDataToInputByID("editpane_title", "***4X " + name + "***");
-            //ff.insertDataToInputByClass("find-product","Abrade");
-            //ff.closeChrome();
+            //get all data we need for a card
+            string name = ff.getDataFromJSON("Abrade", "name");
+            string set = ff.getDataFromJSON("Abrade", "set");
+            string setName = ff.getDataFromJSON("Abrade", "setName"); 
+
+            //Insert To Fileds
+            ff.insertDataToInputByName("title", "***4X " + name + "- MTG - " + setName + " - " + set + "***");
+
+            ff.clickOnElementByClass("class='copyWebLink2'");
         }
     }
 }
