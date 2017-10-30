@@ -53,10 +53,10 @@ namespace testNum1
             browser.FindElement(By.XPath("//input[@" + att + "]")).Click();
         }
 
-        public void waitFunc(int time)
-        {
-            browser.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(time));
-        }
+        //public void waitFunc(int time)
+        //{
+        //    browser.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(time));
+        //}
 
         public void insertDataToInputByName(string att, string str)
         {
@@ -66,10 +66,10 @@ namespace testNum1
 
         public string getDataFromJSON(string name, string att)
         {
-            string returnAtt=null;
+            string returnAtt = null;
 
             var json = new WebClient().DownloadString("https://api.magicthegathering.io/v1/cards?name=" + name);
-            waitFunc(10);
+            //waitFunc(10);
             JObject obj = JObject.Parse(json);
 
             returnAtt = obj["cards"][0][att].Value<string>();
@@ -78,9 +78,53 @@ namespace testNum1
             return returnAtt;
         }
 
+        public string getColorFromJSON(string name, string att)
+        {
+            string returnAtt = null;
+
+            var json = new WebClient().DownloadString("https://api.magicthegathering.io/v1/cards?name=" + name);
+            //waitFunc(10);
+            JObject obj = JObject.Parse(json);
+
+            returnAtt = obj["cards"][0][att][0].Value<string>();
+
+
+            return returnAtt;
+        }
+
+        public string getPriceFromJSON(string name, string set)
+        {
+            //TODO try cathe for price
+            var json = new WebClient().DownloadString("http://magictcgprices.appspot.com/api/cfb/price.json?cardname="+ name +"&setname=" + set);
+            //JObject obj = JObject.Parse(json);
+
+            //returnAtt = obj["cards"][0][att].Value<string>();
+
+
+            return json.ToString();
+        }
+
         public void clickOnElementByClass(string att)
         {
             browser.FindElement(By.XPath("//span[@" + att + "]")).Click();
+        }
+
+        public bool TryParseDouble(string input, out double value)
+        {
+            //if (string.IsNullOrWhiteSpace(input)) return false;
+            const string Numbers = "0123456789.";
+            var numberBuilder = new StringBuilder();
+            foreach (char c in input)
+            {
+                if (Numbers.IndexOf(c) > -1)
+                    numberBuilder.Append(c);
+            }
+            return double.TryParse(numberBuilder.ToString(), out value);
+        }
+
+        public void soicelClickOnImageClick()
+        {
+            browser.FindElement(By.XPath("//span[@class='copyWebLink2']")).Click();
         }
     }
 }
